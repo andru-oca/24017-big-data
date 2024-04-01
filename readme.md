@@ -33,7 +33,4 @@ alfabéticamente.
 premio en la entrega de diplomas. ¿Quién es el instructor y cuántos alumnos distinguidos tuvo en
 sus clases?
 
-#### Todos los derechos son reservados por el Programa Codo a Codo perteneciente a la
-#### Subsecretaría Agencia de Aprendizaje a lo largo de la vida del Ministerio de Educación del
-#### Gobierno de la Ciudad Autónoma de Buenos Aires. Se encuentra prohibida su venta o
-#### comercialización.
+#### Todos los derechos son reservados por el Programa Codo a Codo perteneciente a la Subsecretaría Agencia de Aprendizaje a lo largo de la vida del Ministerio de Educación del Gobierno de la Ciudad Autónoma de Buenos Aires. Se encuentra prohibida su venta o comercialización.
