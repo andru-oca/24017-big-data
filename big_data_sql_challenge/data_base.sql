@@ -8,7 +8,7 @@ CREATE TABLE genero (
 );
 
 CREATE TABLE nivel (
-    id_level INT PRIMARY KEY,
+    id_nivel INT PRIMARY KEY,
     nivel VARCHAR(255)
 );
 
@@ -22,7 +22,7 @@ CREATE TABLE instructor (
 
 
 CREATE TABLE alumno (
-    id_user INT PRIMARY KEY,
+    id_alumno INT PRIMARY KEY,
     nombre VARCHAR(255),
     apellido VARCHAR(255),
     email VARCHAR(255),
@@ -34,7 +34,7 @@ CREATE TABLE alumno (
 
 CREATE TABLE modelado (
     legajo INT PRIMARY KEY,
-    id_level INT,
+    id_nivel INT,
     id_alumno INT,
     id_instructor INT
 
@@ -54,4 +54,4 @@ ALTER TABLE modelado
 ALTER TABLE modelado
     ADD CONSTRAINT fk_modelado_nivel FOREIGN KEY (id_level) REFERENCES nivel(id_level);
 ALTER TABLE modelado
-    ADD CONSTRAINT fk_modelado_alumno FOREIGN KEY (id_alumno) REFERENCES alumno(id_user);
+    ADD CONSTRAINT fk_modelado_alumno FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno);
