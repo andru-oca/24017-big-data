@@ -1,4 +1,5 @@
 # CAC Big data
+ 
 ### Problema: 
 Nos asignan una serie de tareas en un instituto de inglés.
 - Curso en 5 Niveles: 1A, 1B, 2, 3 y 4
@@ -31,3 +32,8 @@ alfabéticamente.
 - El instructor que obtuvo mayor cantidad de alumnos con puntaje > 9 en el examen final recibirá un
 premio en la entrega de diplomas. ¿Quién es el instructor y cuántos alumnos distinguidos tuvo en
 sus clases?
+
+#### Todos los derechos son reservados por el Programa Codo a Codo perteneciente a la
+#### Subsecretaría Agencia de Aprendizaje a lo largo de la vida del Ministerio de Educación del
+#### Gobierno de la Ciudad Autónoma de Buenos Aires. Se encuentra prohibida su venta o
+#### comercialización.
