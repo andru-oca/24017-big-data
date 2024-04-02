@@ -115,7 +115,7 @@ SELECT
 FROM alumno a
 INNER JOIN modelado m ON m.id_alumno = a.id_alumno
 INNER JOIN instructor i ON i.id_instructor = m.id_instructor
-WHERE a.nombre = 'Uta' AND a.apellido = 'Domanek';
+WHERE a.nombre = 'Uta' AND a.apellido = 'Domanek';lenge
 
 ```
 
@@ -123,8 +123,49 @@ WHERE a.nombre = 'Uta' AND a.apellido = 'Domanek';
 - El instructor designado para tomar examen final a los alumnos de último nivel que tienen apellidos
 que comienzan con M,N,O y P, solicita una lista de los alumnos a examinar, ordenada
 alfabéticamente.
+```
+SELECT
+    i.nombre_instructor
+,   i.apellido_instructor    
+,   a.nombre
+,   a.apellido
+,   a.email
+
+FROM modelado AS m
+INNER JOIN nivel AS n
+    USING(id_nivel)
+INNER JOIN instructor AS i
+    USING(id_instructor)
+INNER JOIN alumno AS a
+    USING(id_alumno)
+WHERE 1 = 1 
+AND    n.nivel = CAST( (SELECT MAX(nivel)
+                     FROM (SELECT    
+                            REGEXP_SUBSTR(nivel, '[0-9]+') AS nivel
+                            FROM nivel
+                    ) as nivel ) AS CHAR)
+
+AND a.apellido REGEXP '^[M-P]'
+ORDER BY i.nombre_instructor DESC, a.apellido , a.nombre ;
+```
+
 - El instructor que obtuvo mayor cantidad de alumnos con puntaje > 9 en el examen final recibirá un
 premio en la entrega de diplomas. ¿Quién es el instructor y cuántos alumnos distinguidos tuvo en
 sus clases?
+```
+SELECT
+    i.nombre_instructor,
+    i.apellido_instructor,
+    COUNT(a.id_alumno) AS alumnos_distinguidos
+FROM alumno a
+INNER JOIN modelado m ON m.id_alumno = a.id_alumno
+INNER JOIN instructor i ON i.id_instructor = m.id_instructor
+WHERE a.nota_final > 9
+GROUP BY i.id_instructor
+ORDER BY alumnos_distinguidos DESC
+LIMIT 1
+
+```
+
 
 #### Todos los derechos son reservados por el Programa Codo a Codo perteneciente a la Subsecretaría Agencia de Aprendizaje a lo largo de la vida del Ministerio de Educación del Gobierno de la Ciudad Autónoma de Buenos Aires. Se encuentra prohibida su venta o comercialización.

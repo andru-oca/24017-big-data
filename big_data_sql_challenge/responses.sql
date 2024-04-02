@@ -88,3 +88,27 @@ INNER JOIN modelado m ON m.id_alumno = a.id_alumno
 INNER JOIN instructor i ON i.id_instructor = m.id_instructor
 WHERE a.nombre = 'Uta' AND a.apellido = 'Domanek';
 
+
+SELECT
+    i.nombre_instructor
+,   i.apellido_instructor    
+,   a.nombre
+,   a.apellido
+,   a.email
+
+FROM modelado AS m
+INNER JOIN nivel AS n
+    USING(id_nivel)
+INNER JOIN instructor AS i
+    USING(id_instructor)
+INNER JOIN alumno AS a
+    USING(id_alumno)
+WHERE 1 = 1 
+AND    n.nivel = CAST( (SELECT MAX(nivel)
+                     FROM (SELECT    
+                            REGEXP_SUBSTR(nivel, '[0-9]+') AS nivel
+                            FROM nivel
+                    ) as nivel ) AS CHAR)
+
+AND a.apellido REGEXP '^[M-P]'
+ORDER BY i.nombre_instructor DESC, a.apellido , a.nombre ;
