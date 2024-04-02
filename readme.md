@@ -10,15 +10,19 @@ Nos asignan una serie de tareas en un instituto de inglés.
 
 - Migrar de un sistema de planilla de cálculo a una BBDD SQL. Nos proporcionan una copia de la
 planilla con datos "sample". Normalizar la tabla y plantear el diagrama DER.
-https://docs.google.com/spreadsheets/d/1QfDc073iqZa0kIs77bXOlGQqE9K1fPSlVaPoGHtD_lA/
-edit?usp=drive_link
+
+[TABLA A LIMPIAR Y NORMALIZAR](https://docs.google.com/spreadsheets/d/e/2PACX-1vS-kt2YWC72aLPQQSJet2Qy588eIx-fuLjuqaFkyCXS9lr_wt1bqXx0hWPpVgEoIKuUGOQYZkC_AJcu/pubhtml)
+
 - Crear la BBDD, tablas y cargar los datos reales. SQL para carga de datos de instructores y
-alumnos: https://drive.google.com/file/d/1tkG4TJOUy1eckE66nHp6-tBMvGTMijfC/view?
-usp=drive_link
+alumnos [PROCESO FINAL DE NORMALIZADO](./data)
+
+> Se termino de generar las tablas y la populacion de la base usando el archivo changer.sh
+> Modificacion de algunos campos de la ingesta de nivel, pues no fueron considerados como categoricos por error del script shell
 
 Utilizando la BBDD, generar los listados u obtener la información que requieren las siguientes situaciones:
 - Para reducir la deserción en el nivel 1A, se solicita una lista con nombres y apellidos para contactar
 vía mail a los alumnos que no se han presentado al examen final.
+
 ```
 SELECT 
     a.email AS correo_electronico
@@ -115,7 +119,7 @@ SELECT
 FROM alumno a
 INNER JOIN modelado m ON m.id_alumno = a.id_alumno
 INNER JOIN instructor i ON i.id_instructor = m.id_instructor
-WHERE a.nombre = 'Uta' AND a.apellido = 'Domanek';lenge
+WHERE a.nombre = 'Uta' AND a.apellido = 'Domanek';
 
 ```
 
