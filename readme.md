@@ -81,6 +81,7 @@ LEFT JOIN alumno  AS a
     ON a.id_alumno = m.id_alumno
 WHERE 1=1
     AND a.nota_final IS NOT NULL
+    AND a.nota_final > 7
     ;
 ```
 
