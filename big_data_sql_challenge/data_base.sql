@@ -52,6 +52,6 @@ ALTER TABLE alumno
 ALTER TABLE modelado    
     ADD CONSTRAINT fk_modelado_instructor FOREIGN KEY (id_instructor) REFERENCES instructor(id_instructor);
 ALTER TABLE modelado
-    ADD CONSTRAINT fk_modelado_nivel FOREIGN KEY (id_level) REFERENCES nivel(id_level);
+    ADD CONSTRAINT fk_modelado_nivel FOREIGN KEY (id_nivel) REFERENCES nivel(id_nivel);
 ALTER TABLE modelado
     ADD CONSTRAINT fk_modelado_alumno FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno);
