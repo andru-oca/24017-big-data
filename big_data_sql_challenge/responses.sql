@@ -1,3 +1,5 @@
+USE colegio ;
+
 SELECT 
     a.email AS correo_electronico
 ,   CONCAT("<p>Hola  ", a.nombre , ", ", a.apellido, " </p>
@@ -112,3 +114,4 @@ AND    n.nivel = CAST( (SELECT MAX(nivel)
 
 AND a.apellido REGEXP '^[M-P]'
 ORDER BY i.nombre_instructor DESC, a.apellido , a.nombre ;
+

@@ -16,6 +16,15 @@ planilla con datos "sample". Normalizar la tabla y plantear el diagrama DER.
 - Crear la BBDD, tablas y cargar los datos reales. SQL para carga de datos de instructores y
 alumnos [PROCESO FINAL DE NORMALIZADO](./data)
 
+- _Notas al pie sobre la creacion de las sentencias de insert[Convertidor de CSV into SQL INSERT INTO STATEMENT](https://konbert.com/convert/csv/to/sql)_
+- _En el caso de este repositorio se ha realizado una creacion con un script_
+    * _Pasos a seguir_
+    * _Obtener los csv y colocarlos en la carpeta data_
+    * _Ubicarse en la carpeta data y correr el archivo changer.sh_
+    * _Corregir detalle del item de la tabla Nivel_
+    * _Ingresar a la carpeta root_
+    * _Levantar Base de datos MariaDB con docker: docker compose up -d --build_
+
 > Se termino de generar las tablas y la populacion de la base usando el archivo changer.sh
 > Modificacion de algunos campos de la ingesta de nivel, pues no fueron considerados como categoricos por error del script shell
 
