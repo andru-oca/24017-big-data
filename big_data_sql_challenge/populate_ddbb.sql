@@ -1,6 +1,6 @@
 USE colegio; 
  
- INSERT INTO nivel(id_nivel,nivel) 
+INSERT INTO nivel(id_nivel,nivel) 
 	VALUES
 	(1,"1B"),
 	(2,"4"),
