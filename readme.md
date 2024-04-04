@@ -91,7 +91,7 @@ SELECT
     COUNT(a.id_alumno) AS total_aprobados
 FROM modelado AS m
 LEFT JOIN alumno  AS a
-    ON a.id_alumno = m.id_alumno
+    ON m.id_alumno = a.id_alumno
 WHERE 1=1
     AND a.nota_final IS NOT NULL
     AND a.nota_final > 7
@@ -110,7 +110,7 @@ SELECT
     COUNT(CASE WHEN a.nota_final IS NULL THEN 1 END) AS ausentes
 FROM alumno a
 INNER JOIN modelado m ON m.id_alumno = a.id_alumno
-INNER JOIN nivel n ON n.id_nivel = m.id_nivel
+INNER JOIN nivel n ON m.id_nivel = n.id_nivel
 GROUP BY n.id_nivel, n.nivel
 ORDER BY n.nivel ASC;
 ```
@@ -128,7 +128,7 @@ SELECT
 ) AS mensaje_instructor
 FROM alumno a
 INNER JOIN modelado m ON m.id_alumno = a.id_alumno
-INNER JOIN instructor i ON i.id_instructor = m.id_instructor
+INNER JOIN instructor i ON m.id_instructor = i.id_instructor
 WHERE a.nombre = 'Uta' AND a.apellido = 'Domanek';
 
 ```
@@ -173,7 +173,7 @@ SELECT
     COUNT(a.id_alumno) AS alumnos_distinguidos
 FROM alumno a
 INNER JOIN modelado m ON m.id_alumno = a.id_alumno
-INNER JOIN instructor i ON i.id_instructor = m.id_instructor
+INNER JOIN instructor i ON m.id_instructor = i.id_instructor
 WHERE a.nota_final > 9
 GROUP BY i.id_instructor
 ORDER BY alumnos_distinguidos DESC

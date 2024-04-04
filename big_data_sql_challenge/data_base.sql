@@ -41,17 +41,18 @@ CREATE TABLE modelado (
 );
 
 
-
-
 ALTER TABLE alumno
-    ADD CONSTRAINT fk_alumno_genero FOREIGN KEY (id_genero) REFERENCES genero(id_genero);
-
-
-
+    ADD CONSTRAINT fk_alumno_genero 
+    FOREIGN KEY (id_genero) REFERENCES genero(id_genero);
 
 ALTER TABLE modelado    
-    ADD CONSTRAINT fk_modelado_instructor FOREIGN KEY (id_instructor) REFERENCES instructor(id_instructor);
+    ADD CONSTRAINT fk_modelado_instructor 
+    FOREIGN KEY (id_instructor) REFERENCES instructor(id_instructor);
+
 ALTER TABLE modelado
-    ADD CONSTRAINT fk_modelado_nivel FOREIGN KEY (id_nivel) REFERENCES nivel(id_nivel);
+    ADD CONSTRAINT fk_modelado_nivel 
+    FOREIGN KEY (id_nivel) REFERENCES nivel(id_nivel);
+
 ALTER TABLE modelado
-    ADD CONSTRAINT fk_modelado_alumno FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno);
+    ADD CONSTRAINT fk_modelado_alumno 
+    FOREIGN KEY (id_alumno) REFERENCES alumno(id_alumno);
